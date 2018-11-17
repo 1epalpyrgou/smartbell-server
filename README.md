@@ -19,12 +19,12 @@
 * Δυνατότητα αυτόματης εκφώνησης τυχαίων αποφθεγμάτων κατά την έναρξη των διαλειμμάτων
 * Δυνατότητα ηχογράφησης μηνυμάτων από τον χρήστη και αναπαραγωγή τους  
 
-## Tags
-Open Source, Client-Server, TCP, REST API, Python, Java, Linux, Rasbian OS, App Inventor, Android, TTS
-
 ## Απαιτήσεις Υλικού (Hardware)
 * Raspberry Pi 3 Model B
 * Ασύρματο σημείο πρόσβασης (Wireless Access Point) 
 Αν επιθυμούμε να χρησιμοποιήσουμε ασύρματες φορητές συσκευές όπως τάμπλετ ή κιντητό για τον έλεγχο
 του έξυπνου κουδουνιού θα χρειαστεί να διαθέτουμε πρόσβαση σε ασύρματο δίκτυο.
 * Ηχεία
+
+## Ετικέτες
+Open Source, Client-Server, TCP, REST API, Python, Java, Linux, Rasbian OS, App Inventor, Android, TTS
