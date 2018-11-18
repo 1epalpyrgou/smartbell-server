@@ -26,5 +26,9 @@
 του έξυπνου κουδουνιού θα χρειαστεί να διαθέτουμε πρόσβαση σε ασύρματο δίκτυο.
 * Ηχεία
 
+## Άδεια Χρήσης
+GNU General Public License v3.0
+[https://www.gnu.org/licenses/gpl-3.0.html]
+
 ## Ετικέτες
 Open Source, Client-Server, TCP, REST API, Python, Java, Linux, Rasbian OS, App Inventor, Android, TTS
