@@ -1,3 +1,13 @@
 Κατέβασμα της διανομής Rasbian
 Τοποθεσία https://www.raspberrypi.org/downloads/raspbian/
 Έκδοση Raspbian Stretch Lite - November 2018
+
+Enable SSH on a headless Raspberry Pi (add file to SD card on another machine)
+For headless setup, SSH can be enabled by placing a file named ssh, without any extension, onto the boot partition of the SD card from another computer. When the Pi boots, it looks for the ssh file. If it is found, SSH is enabled and the file is deleted. The content of the file does not matter; it could contain text, or nothing at all.
+Πηγή: https://www.raspberrypi.org/documentation/remote-access/ssh/README.md
+
+
+Εγκατάσταση του Raspbian λειτουργικού συστήματος στο Raspberry
+
+To Raspbian είναι το official λειτουργικό σύστημα του Raspberry Pi και μπορείτε να το κατεβάσετε δωρεάν απ΄ την επίσημη ιστοσελίδα του
+
