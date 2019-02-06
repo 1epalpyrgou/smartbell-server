@@ -1,0 +1,3 @@
+Κατέβασμα της διανομής Rasbian
+Τοποθεσία https://www.raspberrypi.org/downloads/raspbian/
+Έκδοση Raspbian Stretch Lite - November 2018
