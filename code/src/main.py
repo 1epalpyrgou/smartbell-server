@@ -349,7 +349,7 @@ def speechText(language, textmsg):
 def sayTime():
 
     language = 'el'
-    textmsg = "Η ώρα είναι " + time.strftime("%H:%M")
+    textmsg = "Η ώρα είναι " + time.strftime("%I:%M")
 
     filename = epalspeech.createAudioFileFromText(language, textmsg)
 
