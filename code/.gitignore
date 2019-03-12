@@ -1,0 +1,47 @@
+src/config.ini
+
+src/keys/
+src/tmp/
+
+music/dir1/
+music/dir2/
+music/private/
+
+
+# Backup files #
+################
+**/*~
+**/*.bak
+**/*.sw[abcdefghijklmnop]
+
+
+# Logs #
+########
+**/*.log
+
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.directory
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# pyenv
+.python-version
+
