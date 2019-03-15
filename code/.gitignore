@@ -1,14 +1,12 @@
+devel.log
+
 config.ini
 
 keys/
 tmp/
 
 music/
-music/dir1/
-music/dir2/
-music/private/
 
-log/
 
 
 # Backup files #
