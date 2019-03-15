@@ -2,7 +2,7 @@ import time
 import os
 
 import logging
-#import logging.config
+import logging.config
 
 import configparser
 
