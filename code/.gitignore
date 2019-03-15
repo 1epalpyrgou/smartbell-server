@@ -1,11 +1,14 @@
-src/config.ini
+config.ini
 
-src/keys/
-src/tmp/
+keys/
+tmp/
 
+music/
 music/dir1/
 music/dir2/
 music/private/
+
+log/
 
 
 # Backup files #
