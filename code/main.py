@@ -1,6 +1,9 @@
 import time
 import os
+
 import logging
+import logging.config
+
 import configparser
 
 from flask import Flask
@@ -368,6 +371,8 @@ def sayTime():
  
 if __name__ == "__main__":
     #logging.basicConfig(level=logging.DEBUG)
+
+	logging.config.dictConfig({'version': 1, 'disable_existing_loggers': True})
 
     logFormatter = logging.Formatter("%(asctime)s [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s")
     rootLogger = logging.getLogger()
