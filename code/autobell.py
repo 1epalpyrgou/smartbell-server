@@ -121,25 +121,25 @@ def bellAutoRingDefaultSchedule():
                 bellRing('period-1', 'start')
             elif (timeCurrentHHMM == '09:10'):
                 bellRing('period-1', 'end')
-            elif (timeCurrentHHMM == '09:15'):
+            elif (timeCurrentHHMM == '09:20'):
                 bellRing('period-2', 'start')
-            elif (timeCurrentHHMM == '09:55'):
+            elif (timeCurrentHHMM == '10:00'):
                 bellRing('period-2', 'end')
-            elif (timeCurrentHHMM == '10:05'):
+            elif (timeCurrentHHMM == '10:10'):
                 bellRing('period-3', 'start')
-            elif (timeCurrentHHMM == '10:45'):
-                bellRing('period-3', 'end')
             elif (timeCurrentHHMM == '10:50'):
+                bellRing('period-3', 'end')
+            elif (timeCurrentHHMM == '10:55'):
                 bellRing('period-4', 'start')
-            elif (timeCurrentHHMM == '11:30'):
-                bellRing('period-4', 'end')
             elif (timeCurrentHHMM == '11:35'):
+                bellRing('period-4', 'end')
+            elif (timeCurrentHHMM == '11:40'):
                 bellRing('period-5', 'start')
-            elif (timeCurrentHHMM == '12:15'):
-                bellRing('period-5', 'end')
             elif (timeCurrentHHMM == '12:20'):
+                bellRing('period-5', 'end')
+            elif (timeCurrentHHMM == '12:25'):
                 bellRing('period-6', 'start')
-            elif (timeCurrentHHMM == '13:00'):
+            elif (timeCurrentHHMM == '13:05'):
                 bellRing('period-7', 'start')
             elif (timeCurrentHHMM == '13:40'):
                 bellRing('period-7', 'end')
