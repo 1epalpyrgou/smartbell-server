@@ -35,12 +35,6 @@ class weekday:
 
 
 
-def test1():
-    logging.debug('Test1')
-        
-    bellRing('period-3', 'end')
-
-
 
 def bellRingNow():
     logging.debug('Ring bell now...')
@@ -49,8 +43,6 @@ def bellRingNow():
     
     epalaudio.addToPlayQueue(src=bellSoundFilename, volume=100)
     epalaudio.playQueue()
-    
-    #bellRing('period-3', 'end')
 
 
 def bellRing(msg1=None, msg2=None):
@@ -123,7 +115,7 @@ def bellAutoRingDefaultSchedule():
                 
         #logging.debug('Time now is: %s | AutoBellMode: %s | PlayMusicAtBreak: %s' % (timeCurrentHHMM, varBellAutoMode, varPlayMusicAtBreak))
 
-        if (varBellAutoMode == True) and (timeCurrentWeekday in schoolDaysList):
+        if (timeCurrentWeekday in schoolDaysList):
         
             if   (timeCurrentHHMM == '08:30'):
                 bellRing('period-1', 'start')
@@ -190,3 +182,4 @@ def startAutoBellThread():
      
     except KeyboardInterrupt:
         pass
+

@@ -36,7 +36,7 @@ maxPlayTime = 0
 queuePlaylist = queue.Queue()
 
 #define VLC instance
-vlcInstance = vlc.Instance('--no-xlib') #--quiet --verbose 3
+vlcInstance = vlc.Instance('--no-xlib --quiet') #--quiet --verbose 3
 
 #Define VLC player
 player = vlcInstance.media_player_new()
@@ -58,7 +58,7 @@ def volumeFadeOut():
     while curVolume > 0:
         curVolume = curVolume - 10
         player.audio_set_volume(curVolume)
-        time.sleep(0.05)
+        time.sleep(0.1)
 
 
 

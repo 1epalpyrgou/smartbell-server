@@ -21,25 +21,16 @@ from pprint import pprint
 
 from werkzeug.utils import secure_filename
 
-#from api.v1 import api as api_v1
-
 config = configparser.ConfigParser()
 config.read('config.ini')
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = config.get('flask', 'upload_dir')
 
-#app.register_blueprint(api_v1, url_prefix='/v1')
-
-#  return jsonify({'error': 'no file'}), 400
-
-
 
 USER_DATA = {
     "admin": "12345678"
 }
-
-
 
        
 def verifyUser(username, password):
@@ -103,44 +94,6 @@ def ping():
     return jsonify(data)
 
 
-
-@app.route("/play/naturesounds", methods=['POST'])
-@login_required
-def playSoundsNature():
-
-    data = {
-        'status' : 'ok',
-        'cmdSetTime': time.strftime("%m/%d/%Y %H:%M:%S"),
-        'cmdSetBellAutoMode': autobell.getBellAutoMode(),
-        'cmdSetPlayMusicAtBreakMode': autobell.getPlayMusicAtBreak()
-    }
-
-    epalaudio.addToPlayQueue(src='../music/forest.mp3', volume=30)
-    epalaudio.playQueue()
-
-    return jsonify(data)
-
-
-
-
-
-
-
-
-@app.route("/devel", methods=['POST'])
-@login_required
-def test1():
-
-    autobell.test1()
-
-    data = {
-        'status' : 'ok',
-        'cmdSetTime': time.strftime("%m/%d/%Y %H:%M:%S"),
-        'cmdSetBellAutoMode': autobell.getBellAutoMode()        
-    }
-    
-    return jsonify(data)
-
     
 @app.route("/bell/ringnow", methods=['POST'])
 @login_required
@@ -158,16 +111,13 @@ def bellringnow():
 def playWebRadio(stationId):
 
     if stationId == 1:
-        epalaudio.addToPlayQueue(src='http://kissfm.live24.gr/kiss2111', volume=20)        
+        epalaudio.addToPlayQueue(src='http://kissfm.live24.gr/kiss2111', volume=80)        
         epalaudio.playQueue()
     elif stationId == 2:
-        #epalaudio.playWebRadio('http://galaxy.live24.gr:80/galaxy9292')
-        #epalaudio.addToPlayQueue(src='http://streaming.lxcluster.at:8000/live128', volume=20)
-        epalaudio.addToPlayQueue(src='http://galaxy.live24.gr:80/galaxy9292', volume=20)
+        epalaudio.addToPlayQueue(src='http://galaxy.live24.gr:80/galaxy9292', volume=80)
         epalaudio.playQueue()
     elif stationId == 3:
-        #epalaudio.addToPlayQueue(src='http://109.123.116.202:8020/stream', volume=20)
-        epalaudio.addToPlayQueue(src='dfgream.mp3', volume=20)
+        epalaudio.addToPlayQueue(src='http://109.123.116.202:8020/stream', volume=80)
         epalaudio.playQueue()
 
     data = {
@@ -278,56 +228,6 @@ def audioqueueplaynext():
     
     return jsonify(data)
  
-
-@app.route('/post1/', methods=['POST'])
-@login_required
-def transaction_result():
-    result = request.get_json(force=True)
-    
-    for k,v in result.items():
-        print("Key: ", k) 
-    
-    data = {
-        'status' : 'ok',
-    }
-
-    # jsonify (imported from Flask above)
-    # will convert 'data' dictionary and set mime type to 'application/json'
-    return jsonify(data)
-
-    
-@app.route('/upload', methods=['POST'])
-def upload_file():
-    if request.method == 'POST':
-        logging.debug('POST Upload')
-        # check if the post request has the file part
-        if 'file' not in request.files:
-            logging.debug('Missing file field')
-            data = {'status' : 'failed', 'msg' : 'Missing file field'}
-            return jsonify(data)
-        
-        file = request.files['file']
-        
-        # if user does not select file, browser also
-        # submit a empty part without filename
-        if file.filename == '':
-            logging.debug('No selected file')
-            data = {'status' : 'failed', 'msg' : 'No selected file'}
-            return jsonify(data)
-            
-        if file: # and allowed_file(file.filename)
-            logging.debug('got file .. saving ..')
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            data = {'status' : 'ok', 'msg' : 'File saved'}
-            return jsonify(data)
-            
-    logging.debug('Unknown status')
-    data = {'status' : 'failed', 'msg' : 'Unknown status'}
-    
-    return jsonify(data)
-
-
     
 @app.route("/speech/<string:language>/<string:textmsg>", methods=['GET'])
 @login_required
@@ -356,7 +256,7 @@ def sayTime():
 
     filename = epalspeech.createAudioFileFromText(language, textmsg)
 
-    epalaudio.addToPlayQueue(src=filename, volume=60)
+    epalaudio.addToPlayQueue(src=filename, volume=100)
     epalaudio.playQueue()
 
     data = {
