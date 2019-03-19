@@ -113,7 +113,7 @@ def bellAutoRingDefaultSchedule():
         timeCurrentHHMM = datetime.now().strftime('%H:%M')
         timeCurrentWeekday = datetime.today().weekday()
                 
-        #logging.debug('Time now is: %s | AutoBellMode: %s | PlayMusicAtBreak: %s' % (timeCurrentHHMM, varBellAutoMode, varPlayMusicAtBreak))
+        logging.debug('Time now is: %s | AutoBellMode: %s | PlayMusicAtBreak: %s' % (timeCurrentHHMM, varBellAutoMode, varPlayMusicAtBreak))
 
         if (timeCurrentWeekday in schoolDaysList):
         
