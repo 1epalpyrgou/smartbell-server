@@ -79,13 +79,13 @@ def bellRing(msg1=None, msg2=None):
         epalaudio.addToPlayQueue(src=varSoundEffectAnnouncement, volume=40)
         epalaudio.addToPlayQueue(src=timefilename, volume=35)
         
-    if msg2 == "end" and msg1 in ['period-2', 'period-3','period-4']:
+    if msg2 == "end":
         quote = epalquotes.getRandomQuote()
         quotefile = epalspeech.createAudioFileFromText('el', "Αποφθέγματα και στίχοι Ελλήνων συγγραφέων και ποιητών. " + quote)
         epalaudio.addToPlayQueue(src=quotefile, volume=35)
     
     if varPlayMusicAtBreak == True:
-        if msg2 == "end" and msg1 in ['period-2', 'period-3','period-4', 'period-5']:
+        if msg2 == "end":
             introfile = epalspeech.createAudioFileFromText('el', "Μουσική απόδραση. Καλή ακρόαση.")
             epalaudio.addToPlayQueue(src=introfile, volume=35)
             epalaudio.playMusicDirRandom(dir=varPlayMusicAtBreakDir, volume=30)
